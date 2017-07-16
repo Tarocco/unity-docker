@@ -1,9 +1,6 @@
 FROM ubuntu
 
-# alter this when you need to bump the Unity version. Pick a version from
 # http://forum.unity3d.com/threads/unity-on-linux-release-notes-and-known-issues.350256/
-# and copy this file to an appropriately named directory 
-ENV UNITY_VERSION 5.4.1f1+20160913_amd64
 
 RUN apt-get update && apt-get install -y \
       gconf-service \
@@ -48,6 +45,6 @@ RUN apt-get update && apt-get install -y \
       libpq5 \
       xvfb
 
-ADD http://download.unity3d.com/download_unity/linux/unity-editor-$UNITY_VERSION.deb .
-RUN dpkg -i unity-editor-$UNITY_VERSION.deb
-RUN rm      unity-editor-$UNITY_VERSION.deb
+ADD http://beta.unity3d.com/download/ddd95e743b51/unity-editor_amd64-5.6.2xf1Linux.deb .
+RUN dpkg -i unity-editor_amd64-5.6.2xf1Linux.deb
+RUN rm      unity-editor_amd64-5.6.2xf1Linux.deb
