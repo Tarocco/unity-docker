@@ -43,6 +43,7 @@ RUN apt-get update && apt-get install -y \
       xdg-utils \
       lsb-release \
       libpq5 \
+      wget \
       xvfb
 
 ADD wget -O /tmp/unity.deb http://beta.unity3d.com/download/ddd95e743b51/unity-editor_amd64-5.6.2xf1Linux.deb && dpkg -i /tmp/unity.deb && rm /tmp/unity.deb
