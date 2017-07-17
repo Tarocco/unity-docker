@@ -39,6 +39,7 @@ RUN apt-get update && apt-get install -y \
       libxtst6 \
       zlib1g \
       debconf \
+      psmisc \
       npm \
       xdg-utils \
       lsb-release \
