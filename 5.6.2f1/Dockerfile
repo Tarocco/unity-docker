@@ -6,7 +6,7 @@ ENV UNITY_DOWNLOAD_ID ddd95e743b51
 ENV UNITY_PACKAGE_NAME unity-editor_amd64-5.6.2xf1Linux.deb
 
 ENV UNITY_PACKAGE_URL https://beta.unity3d.com/download/$UNITY_DOWNLOAD_ID/$UNITY_PACKAGE_NAME
-ENV UNITY_PACKAGE_PATH /data/$UNITY_PACKAGE_NAME.deb
+ENV UNITY_PACKAGE_PATH /data/$UNITY_PACKAGE_NAME
 
 RUN apt-get update && apt-get install -y \
       gconf-service \
