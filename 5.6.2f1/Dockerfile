@@ -2,6 +2,12 @@ FROM ubuntu
 
 # http://forum.unity3d.com/threads/unity-on-linux-release-notes-and-known-issues.350256/
 
+ENV UNITY_DOWNLOAD_ID ddd95e743b51
+ENV UNITY_PACKAGE_NAME unity-editor_amd64-5.6.2xf1Linux.deb
+
+ENV UNITY_PACKAGE_URL https://beta.unity3d.com/download/$UNITY_DOWNLOAD_ID/$UNITY_PACKAGE_NAME
+ENV UNITY_PACKAGE_PATH /data/$UNITY_PACKAGE_NAME.deb
+
 RUN apt-get update && apt-get install -y \
       gconf-service \
       lib32gcc1 \
@@ -47,4 +53,5 @@ RUN apt-get update && apt-get install -y \
       wget \
       xvfb
 
-RUN wget -O /tmp/unity.deb http://beta.unity3d.com/download/ddd95e743b51/unity-editor_amd64-5.6.2xf1Linux.deb && dpkg -i /tmp/unity.deb && rm /tmp/unity.deb
+RUN wget -nc -O $UNITY_PACKAGE_PATH $UNITY_PACKAGE_URL && \
+    dpkg -i $UNITY_PACKAGE_PATH
